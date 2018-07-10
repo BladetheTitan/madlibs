@@ -34,9 +34,12 @@ class Card extends Component {
     
     handleInputChange(event) {
         this.setState({ [event.target.name]: event.target.value })
-        console.log(this.state);
     }
     
+    
+    handleFormSubmit() {
+        console.log('trying to handle form submit')
+    }
     
     render() {
         
@@ -63,11 +66,14 @@ class Card extends Component {
         ]
         
         return (
-            <div className="card">
+            <form onSubmit={this.handleInputChange} className="card">
+                <div className="card__inputs">
                 {
                     inputData.map(data => Input( (data), this.handleInputChange ))
                 }
-                <Content/>
+                </div>
+                <button>Generate Madlib</button>
+                <Content data={this.state}/>
             </div>
         )
     }
