@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Header = (title) => {
+const Header = () => {
     return (
         <div className="Header">
-            <h1>{title}</h1>
+            <h1>Bottega Madlibs</h1>
             <p>Fill out the fields below and click the generate button to see the Mad Lib story.</p>
         </div>
     )
